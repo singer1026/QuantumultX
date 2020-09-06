@@ -12,4 +12,5 @@ if ($request.url.indexOf("/api/v1/getRadical") != -1){
   obj.result = list;
 }
 var body = JSON.stringify(obj);
+console.log("洪恩识字========================\n" + body);
 $done(body);
