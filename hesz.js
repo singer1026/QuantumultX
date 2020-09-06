@@ -7,7 +7,7 @@ if ($request.url.indexOf("/api/v1/getRadical") != -1){
   var list = obj.result;
   for(item in list){
   	item.isvip = 0;
-  }
-  
+  } 
 }
+console.log("洪恩识字：：：：\n"+JSON.stringify(obj));
 $done({body: JSON.stringify(obj)});
