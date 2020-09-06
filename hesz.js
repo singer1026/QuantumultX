@@ -7,10 +7,9 @@ var obj = JSON.parse($response.body);
 if ($request.url.indexOf("/api/v1/getRadical") != -1){
   var list = obj.result;
   for(item in list){
-  	item.isvip = 1;
+  	item.isvip = 0;
   }
   obj.result = list;
 }
 var body = JSON.stringify(obj);
-console.log("洪恩识字::::" + body);
 $done(body);
