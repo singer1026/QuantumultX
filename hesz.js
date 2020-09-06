@@ -6,7 +6,7 @@ var obj = JSON.parse($response.body);
 if ($request.url.indexOf("/api/v1/getRadical") != -1){
   var list = obj.result;
   for(item in list){
-  	item.isvip = 1;
+  	item.isvip = 0;
   }
   
 }
