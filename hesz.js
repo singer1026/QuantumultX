@@ -8,7 +8,9 @@ if ($request.url.indexOf("/api/v1/getRadical") != -1){
   var list = obj.result;
   for(item in list){
   	item.isvip = 0;
+  	console.log("洪恩识字========================修改VIP");
   }
+  console.log("洪恩识字========================修改完成");
   obj.result = list;
 }
 var body = JSON.stringify(obj);
