@@ -1,13 +1,16 @@
 /*
+*.ihuman.com
 https://shizibook.ihuman.com/api/v1/getRadical
-^https?:\/\/shizibook.ihuman.com/api\/v1/getRadical/\ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js
+^https?:\/\/.*\.ihuman\.com\/api\/v1\/getRadical(.+) url script-response-body https://raw.githubusercontent.com/singer1026/QuantumultX/master/hesz.js
 */
 var obj = JSON.parse($response.body);
 if ($request.url.indexOf("/api/v1/getRadical") != -1){
   var list = obj.result;
   for(item in list){
-  	item.isvip = 0;
-  } 
+  	item.isvip = 1;
+  }
+  obj.result = list;
 }
-console.log("洪恩识字：：：：\n"+JSON.stringify(obj));
-$done({body: JSON.stringify(obj)});
+var body = JSON.stringify(obj);
+console.log("洪恩识字::::" + body);
+$done(body);
